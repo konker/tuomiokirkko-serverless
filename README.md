@@ -15,7 +15,7 @@ This bot is designed to be invoked periodically as a target for an AWS Cloudwatc
 
 2) Edit config.json and fill in your AWS credentials
 
-see: [http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
+[http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
 
 NOTE: There are two profiles available in the example config.json, "test" and "production".
 The one that is used is governed by the var named "MODE" in _index.js_. If you only intend to use one profle, the other one can be left as it is, or removed altogether.
@@ -42,10 +42,10 @@ There are several steps required to deploy the code to AWS Lambda. The following
 - Have an AWS account with Lambda enabled.
 
 - Have successfully set up the aws command line interface.
-See: [http://docs.aws.amazon.com/cli/latest/userguide/installing.html](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
+[http://docs.aws.amazon.com/cli/latest/userguide/installing.html](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
 
 - You have your 12-digit AWS account ID.
-See: [http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html)
+[http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html)
 
 
 ### Example from Documentation

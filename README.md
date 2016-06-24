@@ -10,6 +10,16 @@ Used to power the Tuomiokirkon Kello twitter account:
 This bot is designed to be invoked periodically as a target for an AWS Cloudwatch event.
 
 
+## Configuring
+1) Make a copy of config.example.json and name it config.json
+
+2) Edit config.json and fill in your AWS credentials
+
+see: [http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
+
+NOTE: There are two profiles available in the example config.json, "test" and "production".
+The one that is used is governed by the var named "MODE" in _index.js_. If you only intend to use one profle, the other one can be left as it is, or removed altogether.
+
 ## Building
 Install dependencies via npm:
 
@@ -45,8 +55,8 @@ see: [http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html](http:/
 ### Deploying
 The following description assumes that:
 
-    - Your AWS accoutn ID is: 123456789000
-    - Your function will be named: "MyFunction"
+- Your AWS accoutn ID is: 123456789000
+- Your function will be named: "MyFunction"
 
 1) Create a Lambda function named "MyFunction" following the Example from Documentation (above), and upload TuomiokirkonKello.zip as the code for the function.
 
@@ -54,8 +64,8 @@ The following description assumes that:
 Convenience scripts are provided for two example rules: EveryFiveMins, and OnTheHour.
 See:
 
-    - scripts/add-cloud-watch-rule-EveryFiveMins.sh
-    - scripts/add-cloud-watch-rule-OnTheHour.sh
+    scripts/add-cloud-watch-rule-EveryFiveMins.sh
+    scripts/add-cloud-watch-rule-OnTheHour.sh
 
 3) Add permissions for your function to use the desired rule, e.g.
 

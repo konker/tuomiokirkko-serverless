@@ -28,6 +28,11 @@ Install dependencies via npm:
 Create zip for upload to AWS Lambda:
 
     $ ./build.sh
+    ...
+    adding: node_modules/tweetnacl/nacl.min.js (deflated 65%)
+    adding: node_modules/tweetnacl/nacl-fast.js (deflated 78%)
+    ----------------------------
+    Created TuomiokirkonKello.zip
 
 NOTE: A convenience script, build.sh is provided, but basically you need to create a zip file
 with the javascript and config files. Make sure to also include the node_modules directory in the zip file.
@@ -55,14 +60,13 @@ There are several steps required to deploy the code to AWS Lambda. The following
 ### Deploying
 The following description assumes that:
 
-- Your AWS accoutn ID is: 123456789000
+- You have built the code and created a file named TuomiokirkonKello.zip
+- Your AWS account ID is: 123456789000
 - Your function will be named: "MyFunction"
 
 1) Create a Lambda function named "MyFunction" following the _Example from Documentation_ (above), and upload TuomiokirkonKello.zip as the code for the function.
 
-2) Create a Cloudwatch event rule.
-Convenience scripts are provided for two example rules: EveryFiveMins, and OnTheHour.
-See:
+2) Create a Cloudwatch event rule. Convenience scripts are provided for the creation of two example rules: EveryFiveMins, and OnTheHour.
 
     scripts/add-cloud-watch-rule-EveryFiveMins.sh
     scripts/add-cloud-watch-rule-OnTheHour.sh

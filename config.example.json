@@ -1,0 +1,15 @@
+{
+    "test": {
+        "consumer_key": "FILL_IN",
+        "consumer_secret": "FILL_IN",
+        "access_token_key": "FILL_IN",
+        "access_token_secret": "FILL_IN"
+    },
+
+    "production": {
+        "consumer_key": "FILL_IN",
+        "consumer_secret": "FILL_IN",
+        "access_token_key": "FILL_IN",
+        "access_token_secret": "FILL_IN"
+    }
+}

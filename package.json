@@ -1,0 +1,16 @@
+{
+  "name": "tuomiokirkko-serverless",
+  "version": "1.0.0",
+  "description": "AWS Lambda based Twitter bot for the Tuomiokirkko Kello twitter account. https://twitter.com/tuomiokirkko",
+  "main": "index.js",
+  "author": "Konrad Markus <konker@luxvelocitas.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/konker/tuomiokirkko-serverless.git"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.4",
+    "twitter": "^1.3.0"
+  }
+}

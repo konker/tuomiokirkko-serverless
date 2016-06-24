@@ -1,0 +1,79 @@
+tuomiokirkko-serverless
+------------------------------------------------------------------------------
+
+A nodejs twitter bot running on the AWS Lambda platform.
+
+Used to power the Tuomiokirkon Kello twitter account:
+
+[https://twitter.com/tuomiokirkko](https://twitter.com/tuomiokirkko)
+
+This bot is designed to be invoked periodically as a target for an AWS Cloudwatch event.
+
+
+## Building
+Install dependencies via npm:
+
+    $ npm install
+
+Create zip for upload to AWS Lambda:
+
+    $ ./build.sh
+
+NOTE: A convenience script, build.sh is provided, but basically you need to create a zip file
+with the javascript and config files. Make sure to also include the node_modules directory in the zip file.
+
+
+## Deploying (Briefly)
+*DISCLAIMER: Follow the instructions here at your own risk!*
+
+### Example from Documentation
+[http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/RunLambdaSchedule.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/RunLambdaSchedule.html)
+
+### Prerequisites
+There are several steps required to deploy the code to AWS Lambda. The following assume that you:
+
+a) Have an AWS account with Lambda enabled
+
+b) Have successfully set up the aws command line interface
+
+see: [http://docs.aws.amazon.com/cli/latest/userguide/installing.html](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
+
+c) You have your 12-digit AWS account ID
+
+see: [http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html)
+
+### Deploying
+The following description assumes that:
+
+    - Your AWS accoutn ID is: 123456789000
+    - Your function will be named: "MyFunction"
+
+1) Create a Lambda function named "MyFunction" following the Example from Documentation (above), and upload TuomiokirkonKello.zip as the code for the function.
+
+2) Create a Cloudwatch event rule.
+Convenience scripts are provided for two example rules: EveryFiveMins, and OnTheHour.
+See:
+
+    - scripts/add-cloud-watch-rule-EveryFiveMins.sh
+    - scripts/add-cloud-watch-rule-OnTheHour.sh
+
+3) Add permissions for your function to use the desired rule, e.g.
+
+    $ ./scripts/add-cloud-watch-permissions.sh 123456789000 MyFunction OnTheHour
+
+3) Create a trigger for your rule to invoke your function, e.g.
+
+    ./scripts/add-cloud-watch-trigger.sh 123456789000 MyFunction OnTheHour
+
+### Disabling
+Should you want to disable the event, you can remove the trigger:
+
+1) Find the id of the trigger you want to remove:
+
+    $ ./scripts/remove-cloud-watch-trigger.sh OnTheHour
+
+2) Remove the trigger, assumes you have a trigger with Id=1:
+
+    $ ./scripts/remove-cloud-watch-trigger.sh OnTheHour 1
+
+

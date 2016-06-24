@@ -60,7 +60,7 @@ There are several steps required to deploy the code to AWS Lambda. The following
 ### Deploying
 The following description assumes that:
 
-- You have built the code and created a file named TuomiokirkonKello.zip
+- You have followed the build instructions and created a file named TuomiokirkonKello.zip
 - Your AWS account ID is: 123456789000
 - Your function will be named: "MyFunction"
 

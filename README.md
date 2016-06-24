@@ -36,9 +36,6 @@ with the javascript and config files. Make sure to also include the node_modules
 ## Deploying (Briefly)
 *DISCLAIMER: Follow the instructions here at your own risk!*
 
-### Example from Documentation
-[http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/RunLambdaSchedule.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/RunLambdaSchedule.html)
-
 ### Prerequisites
 There are several steps required to deploy the code to AWS Lambda. The following assume that you:
 
@@ -52,13 +49,18 @@ c) You have your 12-digit AWS account ID
 
 see: [http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html)
 
+
+### Example from Documentation
+[http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/RunLambdaSchedule.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/RunLambdaSchedule.html)
+
+
 ### Deploying
 The following description assumes that:
 
 - Your AWS accoutn ID is: 123456789000
 - Your function will be named: "MyFunction"
 
-1) Create a Lambda function named "MyFunction" following the Example from Documentation (above), and upload TuomiokirkonKello.zip as the code for the function.
+1) Create a Lambda function named "MyFunction" following the _Example from Documentation_ (above), and upload TuomiokirkonKello.zip as the code for the function.
 
 2) Create a Cloudwatch event rule.
 Convenience scripts are provided for two example rules: EveryFiveMins, and OnTheHour.

@@ -39,15 +39,13 @@ with the javascript and config files. Make sure to also include the node_modules
 ### Prerequisites
 There are several steps required to deploy the code to AWS Lambda. The following assume that you:
 
-a) Have an AWS account with Lambda enabled
+- Have an AWS account with Lambda enabled.
 
-b) Have successfully set up the aws command line interface
+- Have successfully set up the aws command line interface.
+See: [http://docs.aws.amazon.com/cli/latest/userguide/installing.html](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
 
-see: [http://docs.aws.amazon.com/cli/latest/userguide/installing.html](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
-
-c) You have your 12-digit AWS account ID
-
-see: [http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html)
+- You have your 12-digit AWS account ID.
+See: [http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html)
 
 
 ### Example from Documentation

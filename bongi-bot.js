@@ -41,10 +41,10 @@ exports.content = function(event) {
 
     // Compose the correct number of 'BONGs'
     ret += START;
-    if (ret == 1) {
+    if (hour == 1) {
         return ret;
     }
-    if (ret == 2) {
+    if (hour == 2) {
         ret += MIDDLE;
         return ret;
     }
